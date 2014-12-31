@@ -1,0 +1,11 @@
+<ul>
+  {{#each controller}}
+    <li>{{#link-to "location" this}}{{name}}{{/link-to}}</li>
+  {{else}}
+    There are no locations.
+  {{/each}}
+</ul>
+
+{{#link-to "locations.new"}}Create a Location{{/link-to}}
+
+{{outlet}}

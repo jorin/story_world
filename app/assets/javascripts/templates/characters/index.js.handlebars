@@ -1,0 +1,11 @@
+<ul>
+  {{#each controller}}
+    <li>{{#link-to "character" this}}{{name}}{{/link-to}}</li>
+  {{else}}
+    There are no characters.
+  {{/each}}
+</ul>
+
+{{#link-to "characters.new"}}Create a Character{{/link-to}}
+
+{{outlet}}

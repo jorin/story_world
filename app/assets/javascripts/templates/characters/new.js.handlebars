@@ -1,0 +1,10 @@
+<h2>New Character</h2>
+<h3>Name</h3>
+{{input type="text" value=name size="50"}}
+<h3>Description</h2>
+{{textarea value=description cols="80" rows="20"}}<br/>
+<label>Started At: {{input type="text" value=started_at size="10"}}</label>
+<label>Ended At: {{input type="text" value=ended_at size="10"}}</label>
+<br/>
+<button {{action "submit" this}}>Create Character</button>
+<button {{action "cancel" this}}>Cancel</button>
