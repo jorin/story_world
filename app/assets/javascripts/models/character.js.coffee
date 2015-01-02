@@ -1,3 +1,5 @@
-App.Character = DS.Model.extend(
-  name: DS.attr("string"), description: DS.attr("string"), started_at: DS.attr("number"), ended_at: DS.attr("number")
+#= require ./timeline
+
+App.Character = App.Timeline.extend(
+  events: DS.hasMany('event', async: true)
 )

@@ -6,7 +6,7 @@ class CharactersController < ApplicationController
   end
 
   def show
-    render json: Character.find(params[:id])
+    render json: Character.includes(:events).find(params[:id])
   end
 
   def create
@@ -19,7 +19,7 @@ class CharactersController < ApplicationController
   end
 
   def update
-    c = Character.find(params[:id])
+    c = Character.includes(:events).find(params[:id])
 
     if c.update_attributes(character_params)
       render json: c, status: :ok

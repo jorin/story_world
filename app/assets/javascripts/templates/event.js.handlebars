@@ -1,0 +1,11 @@
+<h2>{{name}}</h2>
+<h3>{{started_at}}-{{ended_at}} at {{#link-to "location" location}}{{ location.name }}{{/link-to}}</h3>
+<p>{{description}}</p>
+
+<ul>
+{{#each controller.characters}}
+  <li>{{#link-to "character" this}}{{name}}{{/link-to}}</li>
+{{/each}}
+</ul>
+
+{{ outlet }}

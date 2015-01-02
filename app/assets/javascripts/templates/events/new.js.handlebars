@@ -1,0 +1,28 @@
+<h2>New Event</h2>
+<h3>Name</h3>
+{{input type="text" value=name size="50"}}
+<p>
+<label>Started At: {{input type="text" value=started_at size="10"}}</label>
+<label>Ended At: {{input type="text" value=ended_at size="10"}}</label>
+</p>
+
+<ul>
+  {{#each character_selections}}
+    <li>{{input type="checkbox" checked=selected}} {{#link-to "character" this}}{{name}}{{/link-to}}</li>
+  {{else}}
+    There are no available characters in the time frame.
+  {{/each}}
+</ul>
+
+{{ view "select"
+    prompt="Select location"
+    content=available_locations
+    optionValuePath="content.id"
+    optionLabelPath="content.name"
+    selection=selected_location
+}}
+{{ selected_location.name }}
+<h3>Description</h2>
+{{textarea value=description cols="80" rows="20"}}<br/>
+<button {{action "submit" this}} {{bind-attr disabled=is_incomplete_entry}}>Create Event</button>
+<button {{action "cancel" this}}>Cancel</button>
