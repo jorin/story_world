@@ -6,5 +6,5 @@
 <label>Started At: {{input type="text" value=started_at size="10"}}</label>
 <label>Ended At: {{input type="text" value=ended_at size="10"}}</label>
 <br/>
-<button {{action "submit" this}}>Create Location</button>
+<button {{action "submit" this}} {{bind-attr disabled=is_invalid}}>Create Location</button>
 <button {{action "cancel" this}}>Cancel</button>

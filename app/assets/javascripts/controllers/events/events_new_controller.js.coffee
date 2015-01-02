@@ -52,13 +52,9 @@ App.EventsNewController = Ember.ObjectController.extend(
 
   selected_location: null
 
-  is_valid_timeline: (->
-        e_starts = @get("started_at")
-        e_ends = @get("ended_at")
-        !Ember.isEmpty(e_starts) and !Ember.isEmpty(e_ends) and e_starts < e_ends
-      ).property("started_at", "ended_at")
-
   is_incomplete_entry: (->
-        !@get("is_valid_timeline") or Ember.isEmpty(@get("name")) or Ember.isEmpty(@get("description"))
-      ).property("is_valid_timeline", "name", "description", "selected_characters", "selected_location")
+        window.loc = @get("selected_location")
+        window.chars = @get("selected_characters")
+        @get("is_invalid") or @get("selected_characters").length is 0 or @get("selected_location") is null
+      ).property("is_invalid", "selected_characters", "selected_location")
 )

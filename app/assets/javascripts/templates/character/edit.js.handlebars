@@ -4,8 +4,10 @@
 <h3>Update Description</h3>
 {{textarea value=description cols="80" rows="20" placeholder=this.body}}
 <br/>
-<label>Started At: {{input type="text" value=started_at size="10"}}</label>
-<label>Ended At: {{input type="text" value=ended_at size="10"}}</label>
-<br/>
-<button {{action "update" this}}>Update</button>
+{{#unless has_events}}
+  <label>Started At: {{input type="text" value=started_at size="10"}}</label>
+  <label>Ended At: {{input type="text" value=ended_at size="10"}}</label>
+  <br/>
+{{/unless}}
+<button {{action "update" this}} {{bind-attr disabled=is_invalid}}>Update</button>
 <button {{action "cancel" this}}>Cancel</button>

@@ -1,3 +1,13 @@
 <br/>
 <button {{action 'edit'}}>Edit</button>
-<button {{action 'delete' this}}>Delete</button>
+<button {{action 'delete' this}} {{bind-attr disabled=has_events}}>Delete</button>
+{{#if has_events}}A character associated with events can't be deleted{{/if}}
+
+{{#if events.length }}
+  <h4>Events</h4>
+  <ul>
+    {{#each events}}
+      <li>{{#link-to "event" this}}{{name}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+{{/if }}
