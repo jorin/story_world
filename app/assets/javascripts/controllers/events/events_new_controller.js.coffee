@@ -23,7 +23,7 @@ App.EventsNewController = Ember.ObjectController.extend(
         e_ends = @get("ended_at")
         if @get("is_valid_timeline")
           @get("all_characters").filter (character) ->
-            e_starts >= character.get("started_at") and e_ends <= character.get("ended_at")
+            character.is_available_between(e_starts, e_ends)
         else
           []
       ).property("started_at", "ended_at", "is_valid_timeline")
@@ -53,8 +53,6 @@ App.EventsNewController = Ember.ObjectController.extend(
   selected_location: null
 
   is_incomplete_entry: (->
-        window.loc = @get("selected_location")
-        window.chars = @get("selected_characters")
         @get("is_invalid") or @get("selected_characters").length is 0 or @get("selected_location") is null
       ).property("is_invalid", "selected_characters", "selected_location")
 )
