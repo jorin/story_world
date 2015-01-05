@@ -1,0 +1,51 @@
+@import "variables";
+
+.events_timeline {
+  position: relative;
+  height: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  .events_timeline_event {
+    position: absolute;
+    height: 5px;
+    background: #eee;
+    cursor: pointer;
+    &.timeline0 {
+      background: $timeline0;
+      &:hover { background: darken($timeline0, 20%); }
+    }
+    &.timeline1 {
+      background: $timeline1;
+      &:hover { background: darken($timeline1, 20%); }
+    }
+    &.timeline2 {
+      background: $timeline2;
+      &:hover { background: darken($timeline2, 20%); }
+    }
+    &.timeline3 {
+      background: $timeline3;
+      &:hover { background: darken($timeline3, 20%); }
+    }
+    &.timeline4 {
+      background: $timeline4;
+      &:hover { background: darken($timeline4, 20%); }
+    }
+    &.timeline5 {
+      background: $timeline5;
+      &:hover { background: darken($timeline5, 20%); }
+    }
+    &:hover {
+      background: #999;
+      .events_timeline_detail { display: block; }
+    }
+  }
+  .events_timeline_detail {
+    display: none;
+    background: #fff;
+    cursor: default;
+    min-width: 250px;
+    margin: 5px 0 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+}
