@@ -1,7 +1,6 @@
-#= require ./timeline
+#= require ./events_timeline
 
-App.Character = App.Timeline.extend(
-  events: DS.hasMany('event', async: true)
+App.Character = App.EventsTimeline.extend(
   is_available_between: ((e_start, e_end) ->
     c_start = @get("started_at")
     c_end = @get("ended_at")

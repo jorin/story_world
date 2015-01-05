@@ -1,8 +1,8 @@
-{{#if timeline.events.length }}
+{{#if timeline.ordered_events.length }}
   <h4>Events</h4>
   {{ timeline.started_at }}
   <ul>
-    {{#each timeline.events}}
+    {{#each timeline.ordered_events}}
       <li>{{started_at}}-{{ended_at}} {{#link-to "event" this}}{{name}}{{/link-to}}</li>
     {{/each}}
   </ul>

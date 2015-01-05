@@ -1,5 +1,4 @@
-#= require ./timeline
+#= require ./events_timeline
 
-App.Location = App.Timeline.extend(
-  events: DS.hasMany("event", async: true)
+App.Location = App.EventsTimeline.extend(
 )
