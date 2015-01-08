@@ -1,3 +1,4 @@
+@import "bootstrap";
 @import "variables";
 
 .events_timeline {
@@ -39,10 +40,26 @@
       .events_timeline_detail { display: block; }
     }
   }
+  .events_timeline_indicator {
+    width: 5px;
+    height: 5px;
+    @include border-top-radius(5px);
+    @include border-bottom-radius(5px);
+    &.timeline0 { background: darken($timeline0, 20%); }
+    &.timeline1 { background: darken($timeline1, 20%); }
+    &.timeline2 { background: darken($timeline2, 20%); }
+    &.timeline3 { background: darken($timeline3, 20%); }
+    &.timeline4 { background: darken($timeline4, 20%); }
+    &.timeline5 { background: darken($timeline5, 20%); }
+  }
   .events_timeline_detail {
     display: none;
+    position: absolute;
+    z-index: 1;
+    right: 0;
     background: #fff;
     cursor: default;
+    width: 100%;
     min-width: 250px;
     margin: 5px 0 0;
     padding: 5px;

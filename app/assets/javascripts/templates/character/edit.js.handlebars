@@ -12,4 +12,6 @@
 <button {{action "update" this}} {{bind-attr disabled=is_invalid}}>Update</button>
 <button {{action "cancel" this}}>Cancel</button>
 
+<h4>Events</h4>
 {{events-timeline timeline=this}}
+{{events-list timeline=this}}

@@ -1,9 +1,9 @@
 {{#if timeline.ordered_events.length}}
-  <h4>Events</h4>
   <div class="events_timeline">
     {{#each timeline.events_graph}}
       <div {{bind-attr class=":events_timeline_event view_class"}} {{bind-attr style=positioning}}>
         <div class="events_timeline_detail">
+          <div {{bind-attr class=":events_timeline_indicator :pull-right view_class"}}></div>
           <h5>{{#link-to "event" event}}{{event.name}}{{/link-to}}</h5>
           {{event.description}}
           <br/><br/>
@@ -18,11 +18,8 @@
       </div>
     {{/each}}
   </div>
-  {{timeline.started_at}}
-  <ul>
-    {{#each timeline.ordered_events}}
-      <li>{{started_at}}-{{ended_at}} {{#link-to "event" this}}{{name}}{{/link-to}}</li>
-    {{/each}}
-  </ul>
-  {{timeline.ended_at}}
+  <div class="clearfix">
+    <div class="pull-left">{{timeline.started_at}}</div>
+    <div class="pull-right">{{timeline.ended_at}}</div>
+  </div>
 {{/if}}

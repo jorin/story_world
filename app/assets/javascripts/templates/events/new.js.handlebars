@@ -35,7 +35,7 @@
       {{#each all_characters}}
         <li {{bind-attr class="marked_available:text-primary:text-muted"}}>
           {{name}}
-          <div class="small">{{started_at}}-{{ended_at}}</div>
+          <div class="small">{{events-timeline timeline=this}}</div>
         </li>
       {{/each}}
     </ul>

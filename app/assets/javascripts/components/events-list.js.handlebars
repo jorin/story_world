@@ -1,0 +1,9 @@
+{{#if timeline.ordered_events.length}}
+  {{timeline.started_at}}
+  <ul>
+    {{#each timeline.ordered_events}}
+      <li>{{started_at}}-{{ended_at}} {{#link-to "event" this}}{{name}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+  {{timeline.ended_at}}
+{{/if}}

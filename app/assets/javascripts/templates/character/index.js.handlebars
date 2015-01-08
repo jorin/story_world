@@ -3,4 +3,6 @@
 <button {{action 'delete' this}} {{bind-attr disabled=has_events}}>Delete</button>
 {{#if has_events}}A character associated with events can't be deleted{{/if}}
 
+<h4>Events</h4>
 {{events-timeline timeline=this}}
+{{events-list timeline=this}}
