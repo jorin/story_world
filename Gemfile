@@ -38,5 +38,5 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
-gem "ember-rails", "~> 0.15"
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'ember-rails', '~> 0.15'

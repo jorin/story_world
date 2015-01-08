@@ -1,8 +1,24 @@
-<h1>{{#link-to "application"}}Story World{{/link-to}}</h1>
-<ul>
-  <li>{{#link-to "characters"}}Characters{{/link-to}}</li>
-  <li>{{#link-to "locations"}}Locations{{/link-to}}</li>
-  <li>{{#link-to "events"}}Events{{/link-to}}</li>
-</ul>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to "application" class="navbar-brand"}}Story World{{/link-to}}
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>{{#link-to "characters"}}Characters{{/link-to}}</li>
+        <li>{{#link-to "locations"}}Locations{{/link-to}}</li>
+        <li>{{#link-to "events"}}Events{{/link-to}}</li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-{{outlet}}
+<div class="container main-container">
+  {{outlet}}
+</div>
