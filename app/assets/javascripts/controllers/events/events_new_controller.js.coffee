@@ -25,6 +25,7 @@ App.EventsNewController = Ember.ObjectController.extend(
           @get("all_characters").filter (character) ->
             character.is_available_between(e_starts, e_ends)
         else
+          @get("all_characters").setEach("marked_available", null)
           []
       ).property("started_at", "ended_at", "is_valid_timeline")
 

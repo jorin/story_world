@@ -29,14 +29,13 @@
     <button {{action "submit" this}} {{bind-attr disabled=is_incomplete_entry}}>Create Event</button>
     <button {{action "cancel" this}}>Cancel</button>
   </div>
-  <div class="col-sm-3 hidden-xs">
+  <div {{bind-attr class=":col-sm-3 :hidden-xs is_valid_timeline::text-muted"}}>
     <h4>All Characters</h4>
     <ul>
       {{#each all_characters}}
-        <li>
+        <li {{bind-attr class="marked_available:text-primary:text-muted"}}>
           {{name}}
-          <br/>
-          <small>{{started_at}}-{{ended_at}}</small>
+          <div class="small">{{started_at}}-{{ended_at}}</div>
         </li>
       {{/each}}
     </ul>

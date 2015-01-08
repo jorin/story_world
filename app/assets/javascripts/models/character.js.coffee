@@ -11,6 +11,7 @@ App.Character = App.EventsTimeline.extend(
       c_e_end = e.get("ended_at")
       available = available and not (e_start >= c_e_start and e_start <= c_e_end) and not (e_end >= c_e_start and e_end <= c_e_end)
       available
+    @set("marked_available", available)
     available
   )
 )
