@@ -1,5 +1,5 @@
-{{#if timeline.ordered_events.length}}
-  <div class="events_timeline">
+<div class="events_timeline">
+  {{#if timeline.ordered_events.length}}
     {{#each timeline.events_graph}}
       <div {{bind-attr class=":events_timeline_event view_class"}} {{bind-attr style=positioning}}>
         <div class="events_timeline_detail">
@@ -17,9 +17,9 @@
         </div>
       </div>
     {{/each}}
-  </div>
-  <div class="clearfix">
-    <div class="pull-left">{{timeline.started_at}}</div>
-    <div class="pull-right">{{timeline.ended_at}}</div>
-  </div>
-{{/if}}
+  {{/if}}
+</div>
+<div class="clearfix">
+  <div class="pull-left">{{timeline.started_at}}</div>
+  <div class="pull-right">{{timeline.ended_at}}</div>
+</div>
