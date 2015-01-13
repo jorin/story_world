@@ -4,12 +4,13 @@
 .events_timeline {
   position: relative;
   height: 7px;
-  background: #fff;
-  border: 1px solid #ccc;
+  color: $dark;
+  background: $black;
+  border: 1px solid $medium;
   .events_timeline_event {
     position: absolute;
     height: 5px;
-    background: #eee;
+    background: $light;
     cursor: pointer;
     &.timeline0 {
       background: $timeline0;
@@ -57,7 +58,7 @@
     position: absolute;
     z-index: 1;
     right: 0;
-    background: #fff;
+    background: $white;
     cursor: default;
     width: 100%;
     min-width: 250px;

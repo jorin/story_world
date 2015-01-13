@@ -1,43 +1,70 @@
 <div class="row">
   <div class="col-sm-9">
     <h2>New Event</h2>
-    <h3>Name</h3>
-    {{input type="text" value=name size="50"}}
-    <p>
-    <label>Started At: {{input type="text" value=started_at size="10"}}</label>
-    <label>Ended At: {{input type="text" value=ended_at size="10"}}</label>
-    </p>
+    <div class="form-group">
+      <label>Name</label>
+      {{input class="form-control" type="text" value=name}}
+    </div>
+    <div class="form-inline">
+      <div class="form-group">
+        <label class="control-label">Started At:</label>
+        {{input class="form-control" type="text" value=started_at size="10"}}
+      </div>
+      <div class="form-group hidden-xs">
+        &nbsp;&nbsp;
+      </div>
+      <div class="form-group">
+        <label class="control-label">Ended At:</label>
+        {{input class="form-control" type="text" value=ended_at size="10"}}
+      </div>
+    </div>
 
-    <ul>
-      {{#each character_selections}}
-        <li>{{input type="checkbox" checked=selected}} {{#link-to "character" this}}{{name}}{{/link-to}}</li>
-      {{else}}
-        There are no available characters in the time frame.
-      {{/each}}
-    </ul>
+    <br/>
+    <h4>Select Characters</h4>
+    {{#each character_selections}}
+      <div class="row">
+        <div class="col-xs-12">
+          <label>{{input type="checkbox" checked=selected}} {{name}}</label>
+        </div>
+      </div>
+    {{else}}
+      <div class="row">
+        <div class="col-xs-12 text-warning">
+          There are no available characters in the time frame.
+        </div>
+      </div>
+    {{/each}}
 
+    <br/>
+    <h4>Select Location</h4>
     {{ view "select"
-        prompt="Select location"
+        prompt="---"
         content=available_locations
         optionValuePath="content.id"
         optionLabelPath="content.name"
         selection=selected_location
+        classNames="form-control"
     }}
-    {{ selected_location.name }}
-    <h3>Description</h2>
-    {{textarea value=description cols="80" rows="20"}}<br/>
-    <button {{action "submit" this}} {{bind-attr disabled=is_incomplete_entry}}>Create Event</button>
-    <button {{action "cancel" this}}>Cancel</button>
+
+    <br/>
+    <div class="form-group">
+      <label>Description</label>
+      {{textarea class="form-control" value=description cols="80" rows="20"}}
+    </div>
+
+    <button {{action "submit" this}} {{bind-attr disabled=is_incomplete_entry}} class="btn btn-default">Create Event</button>
+    <button {{action "cancel" this}} class="btn btn-default">Cancel</button>
   </div>
-  <div {{bind-attr class=":col-sm-3 :hidden-xs is_valid_timeline::text-muted"}}>
+  <div {{bind-attr class=":col-sm-3 :hidden-xs is_valid_timeline::text-muted :sidebar-info"}}>
     <h4>All Characters</h4>
-    <ul>
       {{#each all_characters}}
-        <li {{bind-attr class="marked_available:text-primary:text-muted"}}>
-          {{name}}
-          <div class="small">{{events-timeline timeline=this}}</div>
-        </li>
+        <div {{bind-attr class="marked_available:text-primary:text-muted :row"}}>
+          <div class="col-xs-12">
+            {{name}}
+            <div class="small">{{events-timeline timeline=this}}</div>
+          </div>
+        </div>
+        <br/>
       {{/each}}
-    </ul>
   </div>
 </div>

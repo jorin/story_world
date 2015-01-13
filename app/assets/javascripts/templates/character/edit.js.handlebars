@@ -1,16 +1,29 @@
-<h2>Edit Character</h2>
-<h3>Update Name</h3>
-{{input type="text" value=name placeholder=this.name}}
-<h3>Update Description</h3>
-{{textarea value=description cols="80" rows="20" placeholder=this.body}}
-<br/>
+<div class="form-group">
+  <label>Name</label>
+  {{input class="form-control" type="text" value=name placeholder=this.name}}
+</div>
+<div class="form-group">
+  <label>Description</label>
+  {{textarea class="form-control" value=description cols="80" rows="20" placeholder=this.body}}
+</div>
 {{#unless has_events}}
-  <label>Started At: {{input type="text" value=started_at size="10"}}</label>
-  <label>Ended At: {{input type="text" value=ended_at size="10"}}</label>
+  <div class="form-inline">
+    <div class="form-group">
+      <label class="control-label">Started At:</label>
+      {{input class="form-control" type="text" value=started_at size="10"}}
+    </div>
+    <div class="form-group hidden-xs">
+      &nbsp;&nbsp;
+    </div>
+    <div class="form-group">
+      <label class="control-label">Ended At:</label>
+      {{input class="form-control" type="text" value=ended_at size="10"}}
+    </div>
+  </div>
   <br/>
 {{/unless}}
-<button {{action "update" this}} {{bind-attr disabled=is_invalid}}>Update</button>
-<button {{action "cancel" this}}>Cancel</button>
+<button {{action "update" this}} {{bind-attr disabled=is_invalid}} class="btn btn-default">Update</button>
+<button {{action "cancel" this}} class="btn btn-default">Cancel</button>
 
 <h4>Events</h4>
 {{events-timeline timeline=this}}

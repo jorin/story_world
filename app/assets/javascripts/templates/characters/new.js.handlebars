@@ -1,10 +1,25 @@
 <h2>New Character</h2>
-<h3>Name</h3>
-{{input type="text" value=name size="50"}}
-<h3>Description</h2>
-{{textarea value=description cols="80" rows="20"}}<br/>
-<label>Started At: {{input type="text" value=started_at size="10"}}</label>
-<label>Ended At: {{input type="text" value=ended_at size="10"}}</label>
+<div class="form-group">
+  <label>Name</label>
+  {{input class="form-control" type="text" value=name}}
+</div>
+<div class="form-group">
+  <label>Description</label>
+  {{textarea class="form-control" value=description cols="80" rows="20"}}
+</div>
+<div class="form-inline">
+  <div class="form-group">
+    <label class="control-label">Started At:</label>
+    {{input class="form-control" type="text" value=started_at size="10"}}
+  </div>
+  <div class="form-group hidden-xs">
+    &nbsp;&nbsp;
+  </div>
+  <div class="form-group">
+    <label class="control-label">Ended At:</label>
+    {{input class="form-control" type="text" value=ended_at size="10"}}
+  </div>
+</div>
 <br/>
-<button {{action "submit" this}} {{bind-attr disabled=is_invalid}}>Create Character</button>
-<button {{action "cancel" this}}>Cancel</button>
+<button {{action "submit" this}} {{bind-attr disabled=is_invalid}} class="btn btn-default">Create Character</button>
+<button {{action "cancel" this}} class="btn btn-default">Cancel</button>

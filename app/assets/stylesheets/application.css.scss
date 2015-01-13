@@ -16,3 +16,21 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "variables";
+
+body {
+  color: $light;
+  background: $dark;
+}
+
+button {
+  color: $dark;
+  &:disabled { color: $light; }
+}
+
+input, textarea { color: $dark; }
+
+.h-unseparated { margin-bottom: 0; }
+
+.navbar-main .navbar-brand { color: $blue; }
+.form-control { color: $light; background: $medium; }

@@ -1,4 +1,10 @@
-<h2>Events</h2>
+<h2 class="h-unseparated">Events</h2>
+<p>
+  {{#link-to "events.new"}}
+    <span class="glyphicon glyphicon-plus-sign"></span>
+    Create an Event
+  {{/link-to}}
+</p>
 
 <ul>
   {{#each controller}}
@@ -7,7 +13,5 @@
     There are no events.
   {{/each}}
 </ul>
-
-{{#link-to "events.new"}}Create an Event{{/link-to}}
 
 {{outlet}}

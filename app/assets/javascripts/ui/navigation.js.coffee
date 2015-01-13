@@ -1,3 +1,3 @@
 $ ->
-  $("body").delegate ".navbar .navbar-collapse a", "click", ->
-    $(".navbar .navbar-collapse").collapse "hide"
+  $("body").delegate ".navbar-main a", "click", ->
+    $(".navbar-main .navbar-collapse").collapse "hide"
