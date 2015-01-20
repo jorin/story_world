@@ -19,7 +19,6 @@ App.EventsTimeline = App.Timeline.extend(
           e_end = e.get("ended_at")
           timeline_event = Ember.Object.create(
             positioning: "left: " + ((e_start - start)/duration * 100) + "%; width: " + ((e_end - e_start)/duration * 100) + "%;"
-            view_class: "timeline" +  (i % 6)
             event: e
           )
           timeline_event

@@ -12,29 +12,25 @@
     height: 5px;
     background: $light;
     cursor: pointer;
-    &.timeline0 {
-      background: $timeline0;
-      &:hover { background: darken($timeline0, 20%); }
+    &:nth-child(5n+1) {
+      background: $pal-1;
+      &:hover, .events_timeline_indicator { background: darken($pal-1, 20%); }
     }
-    &.timeline1 {
-      background: $timeline1;
-      &:hover { background: darken($timeline1, 20%); }
+    &:nth-child(5n+2) {
+      background: $pal-2;
+      &:hover, .events_timeline_indicator { background: darken($pal-2, 20%); }
     }
-    &.timeline2 {
-      background: $timeline2;
-      &:hover { background: darken($timeline2, 20%); }
+    &:nth-child(5n+3) {
+      background: $pal-3;
+      &:hover, .events_timeline_indicator { background: darken($pal-3, 20%); }
     }
-    &.timeline3 {
-      background: $timeline3;
-      &:hover { background: darken($timeline3, 20%); }
+    &:nth-child(5n+4) {
+      background: $pal-3;
+      &:hover, .events_timeline_indicator { background: darken($pal-3, 20%); }
     }
-    &.timeline4 {
-      background: $timeline4;
-      &:hover { background: darken($timeline4, 20%); }
-    }
-    &.timeline5 {
-      background: $timeline5;
-      &:hover { background: darken($timeline5, 20%); }
+    &:nth-child(5n+5) {
+      background: $pal-5;
+      &:hover, .events_timeline_indicator { background: darken($pal-5, 20%); }
     }
     &:hover {
       background: #999;
@@ -46,12 +42,6 @@
     height: 5px;
     @include border-top-radius(5px);
     @include border-bottom-radius(5px);
-    &.timeline0 { background: darken($timeline0, 20%); }
-    &.timeline1 { background: darken($timeline1, 20%); }
-    &.timeline2 { background: darken($timeline2, 20%); }
-    &.timeline3 { background: darken($timeline3, 20%); }
-    &.timeline4 { background: darken($timeline4, 20%); }
-    &.timeline5 { background: darken($timeline5, 20%); }
   }
   .events_timeline_detail {
     display: none;
