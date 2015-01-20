@@ -25,8 +25,8 @@
       &:hover, .events_timeline_indicator { background: darken($pal-3, 20%); }
     }
     &:nth-child(5n+4) {
-      background: $pal-3;
-      &:hover, .events_timeline_indicator { background: darken($pal-3, 20%); }
+      background: $pal-4;
+      &:hover, .events_timeline_indicator { background: darken($pal-4, 20%); }
     }
     &:nth-child(5n+5) {
       background: $pal-5;
@@ -55,5 +55,55 @@
     margin: 5px 0 0;
     padding: 5px;
     border: 1px solid #ccc;
+  }
+}
+
+ul.timeline-type-list {
+  padding: 0;
+  @include clearfix;
+  & > li {
+    overflow: hidden;
+    width: 86px;
+    height: 100px;
+    padding: 10px;
+    margin: 0 10px 10px 0;
+    float: left;
+    background: $very-dark;
+    @include border-top-radius(10px);
+    @include border-bottom-radius(10px);
+    @include box-shadow(0 0 3px $very-dark);
+    a {
+      display: block;
+      &:hover { text-decoration: none; }
+    }
+    &:nth-child(5n+1) a {
+      color: $pal-1;
+      &:hover { color: darken($pal-1, 20%); }
+    }
+    &:nth-child(5n+2) a {
+      color: $pal-2;
+      &:hover { color: darken($pal-2, 20%); }
+    }
+    &:nth-child(5n+3) a {
+      color: $pal-3;
+      &:hover { color: darken($pal-3, 20%); }
+    }
+    &:nth-child(5n+4) a {
+      color: $pal-4;
+      &:hover { color: darken($pal-4, 20%); }
+    }
+    &:nth-child(5n+5) a {
+      color: $pal-5;
+      &:hover { color: darken($pal-5, 20%); }
+    }
+    .glyphicon {
+      display: block;
+      text-align: center;
+      font-size: 36px;
+    }
+    .timeline-type-name {
+      display: block;
+      text-align: center;
+    }
   }
 }

@@ -6,9 +6,14 @@
   {{/link-to}}
 </p>
 
-<ul>
+<ul class="timeline-type-list">
   {{#each controller}}
-    <li>{{#link-to "location" this}}{{name}}{{/link-to}}</li>
+    <li>
+      {{#link-to "location" this}}
+        <span class="glyphicon glyphicon-tower"></span>
+        <span class="timeline-type-name">{{name}}</span>
+      {{/link-to}}
+    </li>
   {{else}}
     There are no locations.
   {{/each}}
