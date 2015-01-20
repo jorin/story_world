@@ -4,15 +4,27 @@
       <div {{bind-attr class=":events_timeline_event"}} {{bind-attr style=positioning}}>
         <div class="events_timeline_detail">
           <div {{bind-attr class=":events_timeline_indicator :pull-right"}}></div>
-          <h5>{{#link-to "event" event}}{{event.name}}{{/link-to}}</h5>
+          <h5>
+            {{#link-to "event" event}}
+              {{icon-event}}
+              {{event.name}}
+            {{/link-to}}
+          </h5>
           {{event.description}}
           <br/><br/>
           {{event.started_at}}-{{event.ended_at}}
-          at {{#link-to "location" event.location}}{{event.location.name}}{{/link-to}}
+          at
+          {{#link-to "location" event.location}}
+            {{icon-location}}
+            {{event.location.name}}
+          {{/link-to}}
           <br/>
           with
           {{#each event.characters}}
-            {{#link-to "character" this}}{{this.name}}{{/link-to}}
+            {{#link-to "character" this}}
+              {{icon-character}}
+              {{this.name}}
+            {{/link-to}}
           {{/each}}
         </div>
       </div>

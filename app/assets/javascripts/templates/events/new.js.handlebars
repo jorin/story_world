@@ -24,7 +24,11 @@
     {{#each character_selections}}
       <div class="row">
         <div class="col-xs-12">
-          <label>{{input type="checkbox" checked=selected}} {{name}}</label>
+          <label>
+            {{input type="checkbox" checked=selected}}
+            {{icon-character}}
+            {{name}}
+          </label>
         </div>
       </div>
     {{else}}
@@ -60,6 +64,7 @@
       {{#each all_characters}}
         <div {{bind-attr class="marked_available:text-primary:text-muted :row"}}>
           <div class="col-xs-12">
+            {{icon-character}}
             {{name}}
             <div class="small">{{events-timeline timeline=this}}</div>
           </div>

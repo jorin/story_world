@@ -4,7 +4,7 @@
 .events_timeline {
   position: relative;
   height: 7px;
-  color: $dark;
+  color: $light;
   background: $black;
   border: 1px solid $medium;
   .events_timeline_event {
@@ -48,13 +48,15 @@
     position: absolute;
     z-index: 1;
     right: 0;
-    background: $white;
+    background: $very-dark;
     cursor: default;
     width: 100%;
     min-width: 250px;
     margin: 5px 0 0;
-    padding: 5px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    border: 1px solid $medium;
+    @include border-bottom-radius(10px);
+    @include box-shadow(0 0 3px $very-dark);
   }
 }
 
