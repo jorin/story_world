@@ -6,13 +6,10 @@
   {{/link-to}}
 </p>
 
-<ul class="timeline-type-list">
+<ul class="card-list">
   {{#each controller}}
     <li>
-      {{#link-to "event" this}}
-        <span class="glyphicon glyphicon-fire"></span>
-        <span class="timeline-type-name">{{name}}</span>
-      {{/link-to}}
+      {{card-event event=this}}
     </li>
   {{else}}
     There are no events.

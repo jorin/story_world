@@ -1,11 +1,17 @@
-<h2>{{name}}</h2>
-<h3>{{started_at}}-{{ended_at}} at {{#link-to "location" location}}{{ location.name }}{{/link-to}}</h3>
-<p>{{description}}</p>
+<h2>
+  <span class="glyphicon glyphicon-fire"></span>
+  {{name}}
+</h2>
+<div class="clearfix">
+  <h3 class="pull-left">{{started_at}}-{{ended_at}} at &nbsp;</h3>
+  {{card-location location=location}}
+</div>
 
-<ul>
-{{#each controller.characters}}
-  <li>{{#link-to "character" this}}{{name}}{{/link-to}}</li>
-{{/each}}
-</ul>
+<br/>
+<p>{{description}}</p>
+<br/>
+
+<h4>Featuring</h4>
+{{characters-list characters=characters}}
 
 {{ outlet }}

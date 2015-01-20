@@ -58,24 +58,13 @@
   }
 }
 
-ul.timeline-type-list {
+ul.card-list {
   padding: 0;
+  list-style: none;
   @include clearfix;
   & > li {
-    overflow: hidden;
-    width: 86px;
-    height: 100px;
-    padding: 10px;
     margin: 0 10px 10px 0;
     float: left;
-    background: $very-dark;
-    @include border-top-radius(10px);
-    @include border-bottom-radius(10px);
-    @include box-shadow(0 0 3px $very-dark);
-    a {
-      display: block;
-      &:hover { text-decoration: none; }
-    }
     &:nth-child(5n+1) a {
       color: $pal-1;
       &:hover { color: darken($pal-1, 20%); }
@@ -96,14 +85,37 @@ ul.timeline-type-list {
       color: $pal-5;
       &:hover { color: darken($pal-5, 20%); }
     }
-    .glyphicon {
-      display: block;
-      text-align: center;
-      font-size: 36px;
-    }
-    .timeline-type-name {
-      display: block;
-      text-align: center;
-    }
+  }
+  .cap {
+    width: 86px;
+    height: 100px;
+    line-height: 86px;
+    text-align: center;
+  }
+  .cap-started { border-right: 1px $very-dark solid;  }
+  .cap-ended { border-left: 1px $very-dark solid; }
+}
+
+.card-item {
+  a {
+    display: block;
+    &:hover { text-decoration: none; }
+    overflow: hidden;
+    width: 86px;
+    height: 100px;
+    padding: 10px;
+    background: $very-dark;
+    @include border-top-radius(10px);
+    @include border-bottom-radius(10px);
+    @include box-shadow(0 0 3px $very-dark);
+  }
+  .glyphicon {
+    display: block;
+    text-align: center;
+    font-size: 36px;
+  }
+  .card-name {
+    display: block;
+    text-align: center;
   }
 }

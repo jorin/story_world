@@ -1,0 +1,9 @@
+<ul class="card-list">
+  {{#each characters}}
+    <li>
+      {{card-character character=this}}
+    </li>
+  {{else}}
+    There are no characters.
+  {{/each}}
+</ul>

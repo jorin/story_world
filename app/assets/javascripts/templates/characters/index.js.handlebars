@@ -6,18 +6,6 @@
   {{/link-to}}
 </p>
 
-<ul class="timeline-type-list">
-  {{#each controller}}
-    <li>
-      {{#link-to "character" this}}
-        <span class="glyphicon glyphicon-user"></span>
-        <span class="timeline-type-name">{{name}}</span>
-      {{/link-to}}
-    </li>
-  {{else}}
-    There are no characters.
-  {{/each}}
-</ul>
-
+{{characters-list characters=this}}
 
 {{outlet}}
