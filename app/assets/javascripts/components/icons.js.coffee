@@ -12,3 +12,8 @@ App.IconLocationComponent = Ember.Component.extend(
   tagName: 'span'
   classNames: ['glyphicon', 'glyphicon-tower']
 )
+
+App.IconStoryworldComponent = Ember.Component.extend(
+  tagName: 'span'
+  classNames: ['glyphicon', 'glyphicon-globe']
+)

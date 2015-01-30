@@ -121,3 +121,64 @@ ul.card-list {
     text-align: center;
   }
 }
+
+.global-timeline {
+  background: $very-dark;
+  padding: 10px;
+  margin: 10px 0 0;
+  @include border-top-radius(10px);
+  @include border-bottom-radius(10px);
+  @include box-shadow(0 0 3px $very-dark);
+  .location-timeline {
+    margin: 10px 0;
+    &:nth-child(5n+1) {
+      .location-name { color: $pal-1; }
+      .location-events > .positioned-in-timeline { border-color: $pal-1; }
+    }
+    &:nth-child(5n+2){
+      .location-name { color: $pal-2; }
+      .location-events > .positioned-in-timeline { border-color: $pal-2; }
+    }
+    &:nth-child(5n+3) {
+      .location-name { color: $pal-3; }
+      .location-events > .positioned-in-timeline { border-color: $pal-3; }
+    }
+    &:nth-child(5n+4) {
+      .location-name { color: $pal-4; }
+      .location-events > .positioned-in-timeline { border-color: $pal-4; }
+    }
+    &:nth-child(5n+5) {
+      .location-name { color: $pal-5; }
+      .location-events > .positioned-in-timeline { border-color: $pal-5; }
+    }
+  }
+  .events-timelines > .positioned-in-timeline {
+    margin: 5px 0 15px;
+    &:nth-child(5n+1) {
+      border-color: $pal-1;
+      .event-name, .event-characters { color: $pal-1; }
+    }
+    &:nth-child(5n+2){
+      border-color: $pal-2;
+      .event-name, .event-characters { color: $pal-2; }
+    }
+    &:nth-child(5n+3) {
+      border-color: $pal-3;
+      .event-name, .event-characters { color: $pal-3; }
+    }
+    &:nth-child(5n+4) {
+      border-color: $pal-4;
+      .event-name, .event-characters { color: $pal-4; }
+    }
+    &:nth-child(5n+5) {
+      border-color: $pal-5;
+      .event-name, .event-characters { color: $pal-5; }
+    }
+  }
+  .event-name, .character-name { position: absolute; }
+}
+
+.positioned-in-timeline {
+  border-top: 1px solid $light;
+  padding-top: 5px;
+}

@@ -1,3 +1,51 @@
-View {{#link-to "characters"}}Characters ({{characters.length}}){{/link-to}}, {{#link-to "locations"}}Locations ({{locations.length}}){{/link-to}}, or {{#link-to "events"}}Events ({{events.length}}){{/link-to}}.
+<h1 class="text-center text-primary">
+  {{icon-storyworld}}
+  <span class="sr-only">Story World</span>
+</h1>
 
-<p>Current global time range: {{all_started_at}}-{{all_ended_at}}</p>
+<div class="global-timeline">
+  <div class="row">
+    <div class="col-sm-3 hidden-xs">&nbsp;</div>
+    <div class="col-sm-9 clearfix">
+      <h2 class="text-center">
+        <span class="pull-left lead">{{all_started_at}} &raquo;</span>
+        <span class="pull-right lead">&laquo; {{all_ended_at}}</span>
+      </h2>
+    </div>
+  </div>
+
+  {{#each location in locations}}
+    <div class="row location-timeline">
+      <div class="col-sm-3 location-name">{{icon-location}} {{location.name}}</div>
+      <div class="col-sm-9 location-events">
+        {{#positioned-in-timeline in_started_at=location.started_at timeline_started_at=all_started_at in_ended_at=location.ended_at timeline_ended_at=all_ended_at}}
+          <div class="clearfix">
+            <span class="pull-left">{{location.started_at}}</span>
+            <span class="pull-right">{{location.ended_at}}</span>
+          </div>
+          <div class="events-timelines">
+            {{#each event in location.events}}
+              {{#positioned-in-timeline in_started_at=event.started_at timeline_started_at=location.started_at in_ended_at=event.ended_at timeline_ended_at=location.ended_at}}
+                <div class="event-in-location">
+                  <div class="event-name">
+                    {{icon-event}} {{event.name}}
+                    <small>{{event.started_at}}-{{event.ended_at}}</small>
+                  </div><br/>
+                  <div class="event-characters">
+                    {{#each event.characters}}
+                      <div class="character-name">
+                        <small>
+                          {{icon-character}} {{name}}
+                        </small>
+                      </div><br/>
+                    {{/each}}
+                  </div>
+                </div>
+              {{/positioned-in-timeline}}
+            {{/each}}
+          </div>
+        {{/positioned-in-timeline}}
+      </div>
+    </div>
+  {{/each}}
+</div>
