@@ -1,14 +1,16 @@
 {{#if timeline.ordered_events.length}}
   <ul class="card-list">
     <li class="cap cap-started">{{timeline.started_at}}</li>
-    {{#each timeline.ordered_events}}
-      <li>
-        {{card-event event=this}}
-        <div class="text-center">
-          {{started_at}}-{{ended_at}}
-        </div>
-      </li>
-    {{/each}}
+    <span class="card-content">
+      {{#each timeline.ordered_events}}
+        <li>
+          {{card-event event=this}}
+          <div class="text-center">
+            {{started_at}}-{{ended_at}}
+          </div>
+        </li>
+      {{/each}}
+    </span>
     <li class="cap cap-ended">{{timeline.ended_at}}</li>
   </ul>
 {{/if}}

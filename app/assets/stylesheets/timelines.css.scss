@@ -64,7 +64,7 @@ ul.card-list {
   padding: 0;
   list-style: none;
   @include clearfix;
-  & > li {
+  & > li, & > .card-content > li {
     margin: 0 10px 10px 0;
     float: left;
     &:nth-child(5n+1) a {
@@ -131,6 +131,8 @@ ul.card-list {
   @include box-shadow(0 0 3px $very-dark);
   .location-timeline {
     margin: 10px 0;
+    padding: 20px 0;
+    border-top: 1px dashed $medium;
     &:nth-child(5n+1) {
       .location-name { color: $pal-1; }
       .location-events > .positioned-in-timeline { border-color: $pal-1; }

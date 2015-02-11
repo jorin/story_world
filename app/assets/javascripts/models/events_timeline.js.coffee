@@ -12,16 +12,19 @@ App.EventsTimeline = App.Timeline.extend(
     start = @get("started_at")
     end = @get("ended_at")
     duration = end - start
-    DS.PromiseArray.create(
-      promise: @get("events").then( (events) ->
-        events.map( (e, i) ->
-          e_start = e.get("started_at")
-          e_end = e.get("ended_at")
-          timeline_event = Ember.Object.create(
-            positioning: "left: " + ((e_start - start)/duration * 100) + "%; width: " + ((e_end - e_start)/duration * 100) + "%;"
-            event: e
+    Ember.ArrayProxy.createWithMixins(Ember.SortableMixin,
+      sortProperties: ["event.started_at"]
+      content: DS.PromiseArray.create(
+        promise: @get("events").then( (events) ->
+          events.map( (e, i) ->
+            e_start = e.get("started_at")
+            e_end = e.get("ended_at")
+            timeline_event = Ember.Object.create(
+              positioning: "left: " + ((e_start - start)/duration * 100) + "%; width: " + ((e_end - e_start)/duration * 100) + "%;"
+              event: e
+            )
+            timeline_event
           )
-          timeline_event
         )
       )
     )
